@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blockchain Studio - Kheira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <main class="app">
+    <header class="hero">
+      <p class="kicker">Projet perso - Kheira Derdour</p>
+      <h1>Blockchain Studio</h1>
+      <p class="subtitle">Visualise la chaine en temps reel et ajoute des blocs en un clic.</p>
+      <div class="hero-actions">
+        <button id="refreshBtn" class="btn ghost">Rafraichir</button>
+        <span id="status" class="status">Pret</span>
+      </div>
+    </header>
+
+    <section class="panel form-panel">
+      <h2>Ajouter un bloc</h2>
+      <form id="blockForm">
+        <label for="blockData">Donnee du bloc</label>
+        <textarea id="blockData" rows="4" placeholder="Ex: Alice paye Bob"></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn solid">Ajouter et sauvegarder</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel chain-panel">
+      <div class="panel-head">
+        <h2>Etat de la chaine</h2>
+        <span id="counter" class="pill">0 blocs</span>
+      </div>
+      <div id="chainList" class="chain-list"></div>
+    </section>
+  </main>
+
+  <template id="blockTemplate">
+    <article class="block-card">
+      <header>
+        <h3>Bloc <span class="index"></span></h3>
+      </header>
+      <dl>
+        <div><dt>Data</dt><dd class="data"></dd></div>
+        <div><dt>Nonce</dt><dd class="nonce"></dd></div>
+        <div><dt>Hash precedent</dt><dd class="prev"></dd></div>
+        <div><dt>Hash</dt><dd class="hash"></dd></div>
+      </dl>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
